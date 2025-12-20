@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+  
+  body.loaded {
+    @apply transition-all duration-1000;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .animate-countUp {
+    animation: countUp 1s ease-out forwards;
+  }
+  
+  .animate-progress {
+    animation: progress 2s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
+  .animate-orbital {
+    animation: orbital 20s linear infinite;
+    transform-origin: center;
+  }
+  
+  .animate-scroll {
+    animation: scroll 2s infinite;
+  }
+  
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes orbital {
+  from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
