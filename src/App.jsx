@@ -189,42 +189,49 @@ function App() {
     },
   ];
 
+  // CORRECTION : Ajout de textColor pour les icônes
   const skills = [
     {
       name: "HTML5/CSS3",
       level: 95,
-      color: "from-orange-500 to-orange-600",
-      icon: <SiHtml5 className="text-orange-500" />,
+      gradientColor: "from-orange-500 to-orange-600",
+      textColor: "text-orange-500",
+      icon: <SiHtml5 />,
     },
     {
       name: "JavaScript",
       level: 90,
-      color: "from-yellow-500 to-yellow-600",
-      icon: <SiJavascript className="text-yellow-500" />,
+      gradientColor: "from-yellow-500 to-yellow-600",
+      textColor: "text-yellow-500",
+      icon: <SiJavascript />,
     },
     {
       name: "React.js",
       level: 85,
-      color: "from-blue-400 to-cyan-500",
-      icon: <SiReact className="text-blue-400" />,
+      gradientColor: "from-blue-400 to-cyan-500",
+      textColor: "text-blue-400",
+      icon: <SiReact />,
     },
     {
       name: "PHP",
       level: 88,
-      color: "from-purple-500 to-purple-600",
-      icon: <SiPhp className="text-purple-500" />,
+      gradientColor: "from-purple-500 to-purple-600",
+      textColor: "text-purple-500",
+      icon: <SiPhp />,
     },
     {
       name: "Node.js",
       level: 80,
-      color: "from-green-500 to-green-600",
-      icon: <SiNodedotjs className="text-green-500" />,
+      gradientColor: "from-green-500 to-green-600",
+      textColor: "text-green-500",
+      icon: <SiNodedotjs />,
     },
     {
       name: "MySQL",
       level: 85,
-      color: "from-blue-500 to-blue-700",
-      icon: <SiMysql className="text-blue-600" />,
+      gradientColor: "from-blue-500 to-blue-700",
+      textColor: "text-blue-600",
+      icon: <SiMysql />,
     },
   ];
 
@@ -531,37 +538,107 @@ function App() {
       {
         category: "Frontend",
         skills: [
-          { name: "HTML5/CSS3", level: 95, icon: <SiHtml5 /> },
-          { name: "JavaScript", level: 90, icon: <SiJavascript /> },
-          { name: "React.js", level: 85, icon: <SiReact /> },
-          { name: "TypeScript", level: 75, icon: <SiTypescript /> },
-          { name: "Tailwind CSS", level: 88, icon: <SiTailwindcss /> },
+          {
+            name: "HTML5/CSS3",
+            level: 95,
+            icon: <SiHtml5 className="text-orange-500" />,
+            color: "text-orange-500",
+          },
+          {
+            name: "JavaScript",
+            level: 90,
+            icon: <SiJavascript className="text-yellow-500" />,
+            color: "text-yellow-500",
+          },
+          {
+            name: "React.js",
+            level: 85,
+            icon: <SiReact className="text-blue-400" />,
+            color: "text-blue-400",
+          },
+          {
+            name: "TypeScript",
+            level: 75,
+            icon: <SiTypescript className="text-blue-500" />,
+            color: "text-blue-500",
+          },
+          {
+            name: "Tailwind CSS",
+            level: 88,
+            icon: <SiTailwindcss className="text-blue-500" />,
+            color: "text-blue-500",
+          },
         ],
       },
       {
         category: "Backend",
         skills: [
-          { name: "Node.js", level: 80, icon: <SiNodedotjs /> },
-          { name: "PHP", level: 88, icon: <SiPhp /> },
-          { name: "Express.js", level: 78, icon: <SiExpress /> },
-          { name: "Java", level: 75, icon: <FaJava /> },
-          { name: "Python", level: 70, icon: <SiPython /> },
+          {
+            name: "Node.js",
+            level: 80,
+            icon: <SiNodedotjs className="text-green-500" />,
+            color: "text-green-500",
+          },
+          { name: "PHP", level: 88, icon: <SiPhp className="text-purple-500" />, color: "text-purple-500" },
+          {
+            name: "Express.js",
+            level: 78,
+            icon: <SiExpress className="text-gray-400" />,
+            color: "text-gray-400",
+          },
+          { name: "Java", level: 75, icon: <FaJava className="text-red-500" />, color: "text-red-500" },
+          {
+            name: "Python",
+            level: 70,
+            icon: <SiPython className="text-blue-600" />,
+            color: "text-blue-600",
+          },
         ],
       },
       {
         category: "Bases de données",
         skills: [
-          { name: "MySQL", level: 85, icon: <SiMysql /> },
-          { name: "MongoDB", level: 75, icon: <SiMongodb /> },
+          {
+            name: "MySQL",
+            level: 85,
+            icon: <SiMysql className="text-blue-700" />,
+            color: "text-blue-700",
+          },
+          {
+            name: "MongoDB",
+            level: 75,
+            icon: <SiMongodb className="text-green-500" />,
+            color: "text-green-500",
+          },
         ],
       },
       {
         category: "Outils & autres",
         skills: [
-          { name: "Git/GitHub", level: 90, icon: <SiGit /> },
-          { name: "Figma", level: 75, icon: <SiFigma /> },
-          { name: "Docker", level: 65, icon: <FaServer /> },
-          { name: "Redux", level: 80, icon: <SiRedux /> },
+          {
+            name: "Git/GitHub",
+            level: 90,
+            icon: <SiGit className="text-orange-600" />,
+            color: "text-orange-600",
+          },
+          {
+            name: "Figma",
+            level: 75,
+            icon: <SiFigma className="text-purple-500" />,
+            color: "text-purple-500",
+          },
+          {
+            name: "Docker",
+            level: 65,
+            icon: <FaServer className="text-blue-500" />,
+            color: "text-blue-500",
+          },
+          {
+            name: "Redux",
+            level: 80,
+            icon: <SiRedux className="text-blue-500" />,
+            color: "text-blue-500",
+          },
         ],
       },
     ],
@@ -666,7 +743,11 @@ function App() {
     );
 
     const ProjectCard = ({ project, index }) => (
-      <div className={`mb-6 print-break-avoid ${index > 0 ? "print-break-before" : ""}`}>
+      <div
+        className={`mb-6 print-break-avoid ${
+          index > 0 ? "print-break-before" : ""
+        }`}
+      >
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-bold text-lg text-gray-800 dark:text-white">
             {project.title}
@@ -1124,7 +1205,9 @@ function App() {
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 dark:text-white">
               Bonjour, je suis{" "}
-              <span className="text-blue-600 dark:text-blue-400">Ezechiel HOUNKPE</span>
+              <span className="text-blue-600 dark:text-blue-400">
+                Ezechiel HOUNKPE
+              </span>
             </h1>
 
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 text-gray-600 dark:text-gray-300">
@@ -1216,7 +1299,10 @@ function App() {
   );
 
   const About = () => (
-    <section id="about" className="py-16 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <section
+      id="about"
+      className="py-16 bg-white dark:bg-slate-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">
@@ -1349,8 +1435,11 @@ function App() {
                 <div key={index}>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center space-x-3">
+                      {/* CORRECTION : Utilisation de textColor au lieu de skill.color */}
                       <div className="w-8 h-8 rounded-lg bg-gray-100 dark:bg-slate-700 flex items-center justify-center">
-                        {skill.icon}
+                        <div className={skill.textColor}>
+                          {skill.icon}
+                        </div>
                       </div>
                       <div className="font-medium dark:text-white">
                         {skill.name}
@@ -1363,7 +1452,7 @@ function App() {
 
                   <div className="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                     <div
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
+                      className={`h-full bg-gradient-to-r ${skill.gradientColor} rounded-full`}
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
@@ -1429,7 +1518,10 @@ function App() {
   );
 
   const Projects = () => (
-    <section id="projects" className="py-16 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <section
+      id="projects"
+      className="py-16 bg-white dark:bg-slate-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">
@@ -1474,9 +1566,7 @@ function App() {
 
               <div className="p-5">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-bold dark:text-white">
-                    {project.title}
-                  </h3>
+                  <h3 className="font-bold dark:text-white">{project.title}</h3>
                   <div className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-xs">
                     {project.year}
                   </div>
@@ -1648,7 +1738,10 @@ function App() {
     };
 
     return (
-      <section id="contact" className="py-16 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
+      <section
+        id="contact"
+        className="py-16 bg-gray-50 dark:bg-slate-800 transition-colors duration-300"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">
@@ -1677,9 +1770,7 @@ function App() {
                       <FaEnvelope className="text-blue-600 dark:text-blue-300" />
                     </div>
                     <div>
-                      <div className="font-semibold dark:text-white">
-                        Email
-                      </div>
+                      <div className="font-semibold dark:text-white">Email</div>
                       <div className="text-gray-600 dark:text-gray-300">
                         ezechielben06@gmail.com
                       </div>
@@ -1818,9 +1909,7 @@ function App() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <div className="mb-4 md:mb-0">
-            <div className="text-xl font-bold text-blue-400">
-              Portfolio
-            </div>
+            <div className="text-xl font-bold text-blue-400">Portfolio</div>
             <p className="mt-1 text-gray-400 text-sm">
               Étudiant Développeur Web
             </p>
@@ -1881,7 +1970,7 @@ function App() {
       </main>
       <Footer />
       <BackToTop />
-      
+
       {/* Modal du CV */}
       {showCVModal && <CVModal />}
     </div>
