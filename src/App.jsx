@@ -250,7 +250,7 @@ function App() {
     {
       id: 5,
       title: "Facebook Clone",
-      shortTitle: "Facebook Clone",
+      shortTitle: "Chat io (facebook clone)",
       description:
         "Réplique fonctionnelle de Facebook avec interface moderne, posts en temps réel et interactions sociales.",
       fullDescription:
@@ -264,7 +264,7 @@ function App() {
       tags: ["Social Media", "Real-time", "Authentication", "Full Stack", "Responsive"],
       category: "web",
       github: "https://github.com/ezechielben06/facebook-clone",
-      demo: "https://facebookclone-demo.netlify.app/",
+      demo: "https://chatintern.netlify.app/",
       features: [
         "Création et partage de posts",
         "Commentaires et réactions (like)",
