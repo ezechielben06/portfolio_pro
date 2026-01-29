@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import { useState, useEffect, useMemo, useRef } from "react";
 import {
   FaMoon,
@@ -121,7 +123,13 @@ function App() {
         "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1545239351-1141bd94e3cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ],
-      tags: ["React", "Tailwind CSS", "Form Validation", "Code Generation", "Drag & Drop"],
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Form Validation",
+        "Code Generation",
+        "Drag & Drop",
+      ],
       category: "web",
       github: "https://github.com/ezechielben06/form-builder",
       demo: "https://formbuilder06.netlify.app/",
@@ -134,7 +142,13 @@ function App() {
         "Templates pré-définis",
         "Responsive design",
       ],
-      technologies: ["React", "JavaScript", "Tailwind CSS", "Local Storage", "React DnD"],
+      technologies: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Local Storage",
+        "React DnD",
+      ],
       year: 2024,
       status: "Live",
       projectType: "Outil de développement",
@@ -169,7 +183,13 @@ function App() {
         "Mode hors ligne (PWA)",
         "Synchronisation multi-appareils",
       ],
-      technologies: ["JavaScript", "HTML5", "CSS3", "Local Storage", "Service Workers"],
+      technologies: [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Local Storage",
+        "Service Workers",
+      ],
       year: 2024,
       status: "Live",
       projectType: "Application Web",
@@ -204,7 +224,13 @@ function App() {
         "Partage en un clic",
         "Historique des versions",
       ],
-      technologies: ["React", "jsPDF", "Tailwind CSS", "Context API", "HTML2Canvas"],
+      technologies: [
+        "React",
+        "jsPDF",
+        "Tailwind CSS",
+        "Context API",
+        "HTML2Canvas",
+      ],
       year: 2024,
       status: "Live",
       projectType: "Outil de carrière",
@@ -226,7 +252,12 @@ function App() {
         "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ],
-      tags: ["Image Download", "API Integration", "Advanced Search", "High Quality"],
+      tags: [
+        "Image Download",
+        "API Integration",
+        "Advanced Search",
+        "High Quality",
+      ],
       category: "web",
       github: "https://github.com/ezechielben06/unsplash-downloader",
       demo: "https://unsplashdownloader56.netlify.app/",
@@ -239,7 +270,13 @@ function App() {
         "Watermark automatique",
         "Compression intelligente",
       ],
-      technologies: ["React", "Unsplash API", "Axios", "Tailwind CSS", "React Query"],
+      technologies: [
+        "React",
+        "Unsplash API",
+        "Axios",
+        "Tailwind CSS",
+        "React Query",
+      ],
       year: 2024,
       status: "Live",
       projectType: "Outil de design",
@@ -255,13 +292,20 @@ function App() {
         "Réplique fonctionnelle de Facebook avec interface moderne, posts en temps réel et interactions sociales.",
       fullDescription:
         "Ce clone de Facebook reproduit les principales fonctionnalités du réseau social avec une interface moderne et réactive. Il inclut la création de posts, les commentaires, les réactions, le système d'amis et une messagerie en temps réel. Un projet full-stack complet démontrant des compétences avancées.",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       previewImages: [
         "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1579869847557-1f67382cc158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ],
-      tags: ["Social Media", "Real-time", "Authentication", "Full Stack", "Responsive"],
+      tags: [
+        "Social Media",
+        "Real-time",
+        "Authentication",
+        "Full Stack",
+        "Responsive",
+      ],
       category: "web",
       github: "https://github.com/ezechielben06/facebook-clone",
       demo: "https://chatintern.netlify.app/",
@@ -275,7 +319,15 @@ function App() {
         "Feed algorithmique",
         "Upload d'images/vidéos",
       ],
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Firebase", "Redux"],
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Socket.io",
+        "Firebase",
+        "Redux",
+      ],
       year: 2024,
       status: "Démo",
       projectType: "Réseau Social",
@@ -289,14 +341,20 @@ function App() {
   // Filtrage des projets
   const filteredProjects = useMemo(() => {
     if (projectFilter === "all") return projects;
-    if (projectFilter === "featured") return projects.filter(p => p.rating >= 4.5);
-    return projects.filter(p => p.category === projectFilter);
+    if (projectFilter === "featured")
+      return projects.filter((p) => p.rating >= 4.5);
+    return projects.filter((p) => p.category === projectFilter);
   }, [projectFilter]);
 
   // 🎯 NAVIGATION
   const navItems = [
     { id: "home", label: "Accueil", icon: <FaCode /> },
     { id: "about", label: "À propos", icon: <FaGraduationCap /> },
+    {
+      id: "certifications",
+      label: "Certifications",
+      icon: <FaGraduationCap />,
+    }, // Nouvelle ligne
     { id: "skills", label: "Compétences", icon: <FaTools /> },
     { id: "projects", label: "Projets", icon: <FaBriefcase /> },
     { id: "contact", label: "Contact", icon: <FaEnvelope /> },
@@ -354,7 +412,11 @@ function App() {
     { icon: <SiJavascript />, name: "JavaScript", color: "text-yellow-500" },
     { icon: <SiReact />, name: "React", color: "text-blue-400" },
     { icon: <SiTailwindcss />, name: "Tailwind", color: "text-blue-500" },
-    { icon: <SiNextdotjs />, name: "Next.js", color: "text-gray-800 dark:text-white" },
+    {
+      icon: <SiNextdotjs />,
+      name: "Next.js",
+      color: "text-gray-800 dark:text-white",
+    },
     { icon: <SiNodedotjs />, name: "Node.js", color: "text-green-500" },
     { icon: <SiExpress />, name: "Express", color: "text-gray-400" },
     { icon: <SiMysql />, name: "MySQL", color: "text-blue-700" },
@@ -429,7 +491,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     document.querySelectorAll("section[id]").forEach((section) => {
@@ -513,17 +575,23 @@ function App() {
     // Filtres de projet
     const projectFilters = [
       { id: "all", label: "Tous les projets", count: projects.length },
-      { id: "featured", label: "Projets vedettes", count: projects.filter(p => p.rating >= 4.5).length },
+      {
+        id: "featured",
+        label: "Projets vedettes",
+        count: projects.filter((p) => p.rating >= 4.5).length,
+      },
       { id: "web", label: "Applications Web", count: projects.length },
     ];
 
     // Effet pour le carrousel automatique
     useEffect(() => {
       if (!previewAutoPlay || !projectModal.isOpen) return;
-      
+
       const interval = setInterval(() => {
-        setActivePreviewIndex((prev) => 
-          prev < (projectModal.project?.previewImages?.length || 1) - 1 ? prev + 1 : 0
+        setActivePreviewIndex((prev) =>
+          prev < (projectModal.project?.previewImages?.length || 1) - 1
+            ? prev + 1
+            : 0,
         );
       }, 3000);
 
@@ -545,7 +613,8 @@ function App() {
               Mes Créations
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
-              Applications web fonctionnelles que j'ai développées et qui sont disponibles en ligne
+              Applications web fonctionnelles que j'ai développées et qui sont
+              disponibles en ligne
             </p>
           </div>
 
@@ -562,11 +631,13 @@ function App() {
                 }`}
               >
                 <span>{filter.label}</span>
-                <span className={`px-2 py-0.5 rounded-full text-xs ${
-                  projectFilter === filter.id 
-                    ? "bg-white/20" 
-                    : "bg-gray-100 dark:bg-slate-700"
-                }`}>
+                <span
+                  className={`px-2 py-0.5 rounded-full text-xs ${
+                    projectFilter === filter.id
+                      ? "bg-white/20"
+                      : "bg-gray-100 dark:bg-slate-700"
+                  }`}
+                >
                   {filter.count}
                 </span>
               </button>
@@ -592,7 +663,9 @@ function App() {
 
                 {/* Image de prévisualisation avec effet */}
                 <div className="relative h-64 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-10`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-10`}
+                  ></div>
                   <img
                     src={project.image}
                     alt={project.title}
@@ -681,7 +754,9 @@ function App() {
                 </div>
 
                 {/* Effet de bordure colorée */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <div
+                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                ></div>
               </div>
             ))}
           </div>
@@ -703,8 +778,12 @@ function App() {
                   <div className="flex items-center mt-2 space-x-4">
                     <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                       <FaStar className="w-4 h-4 text-yellow-500 fill-current mr-1" />
-                      <span className="font-semibold">{projectModal.project.rating}</span>
-                      <span className="ml-1">({projectModal.project.downloads})</span>
+                      <span className="font-semibold">
+                        {projectModal.project.rating}
+                      </span>
+                      <span className="ml-1">
+                        ({projectModal.project.downloads})
+                      </span>
                     </div>
                     <span className="px-3 py-1 bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold">
                       {projectModal.project.status}
@@ -715,7 +794,11 @@ function App() {
                   <button
                     onClick={() => setPreviewAutoPlay(!previewAutoPlay)}
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-slate-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors"
-                    title={previewAutoPlay ? "Arrêter le carrousel" : "Démarrer le carrousel"}
+                    title={
+                      previewAutoPlay
+                        ? "Arrêter le carrousel"
+                        : "Démarrer le carrousel"
+                    }
                   >
                     {previewAutoPlay ? "⏸️" : "▶️"}
                   </button>
@@ -734,7 +817,9 @@ function App() {
                 <div className="mb-8">
                   <div className="relative h-80 rounded-xl overflow-hidden">
                     <img
-                      src={projectModal.project.previewImages[activePreviewIndex]}
+                      src={
+                        projectModal.project.previewImages[activePreviewIndex]
+                      }
                       alt={`Preview ${activePreviewIndex + 1}`}
                       className="w-full h-full object-cover"
                     />
@@ -757,22 +842,29 @@ function App() {
                   </div>
                   <div className="flex justify-between mt-4">
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {activePreviewIndex + 1} / {projectModal.project.previewImages.length}
+                      {activePreviewIndex + 1} /{" "}
+                      {projectModal.project.previewImages.length}
                     </span>
                     <div className="flex space-x-2">
-                      {projectModal.project.previewImages.slice(0, 3).map((img, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setActivePreviewIndex(index)}
-                          className={`w-16 h-12 rounded overflow-hidden border-2 transition-all ${
-                            index === activePreviewIndex
-                              ? "border-blue-500 dark:border-blue-400"
-                              : "border-transparent hover:border-gray-300 dark:hover:border-slate-600"
-                          }`}
-                        >
-                          <img src={img} alt={`Thumb ${index}`} className="w-full h-full object-cover" />
-                        </button>
-                      ))}
+                      {projectModal.project.previewImages
+                        .slice(0, 3)
+                        .map((img, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setActivePreviewIndex(index)}
+                            className={`w-16 h-12 rounded overflow-hidden border-2 transition-all ${
+                              index === activePreviewIndex
+                                ? "border-blue-500 dark:border-blue-400"
+                                : "border-transparent hover:border-gray-300 dark:hover:border-slate-600"
+                            }`}
+                          >
+                            <img
+                              src={img}
+                              alt={`Thumb ${index}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </button>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -807,7 +899,9 @@ function App() {
                             <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-0.5">
                               <div className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full"></div>
                             </div>
-                            <span className="dark:text-gray-300">{feature}</span>
+                            <span className="dark:text-gray-300">
+                              {feature}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -823,41 +917,53 @@ function App() {
                         Technologies utilisées
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        {projectModal.project.technologies.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-700 dark:to-slate-800 text-gray-800 dark:text-gray-300 rounded-lg font-medium hover:scale-105 transition-transform"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                        {projectModal.project.technologies.map(
+                          (tech, index) => (
+                            <span
+                              key={index}
+                              className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-700 dark:to-slate-800 text-gray-800 dark:text-gray-300 rounded-lg font-medium hover:scale-105 transition-transform"
+                            >
+                              {tech}
+                            </span>
+                          ),
+                        )}
                       </div>
                     </div>
 
                     {/* Statistiques */}
                     <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl p-5">
-                      <h4 className="font-semibold mb-4 dark:text-white">Statistiques</h4>
+                      <h4 className="font-semibold mb-4 dark:text-white">
+                        Statistiques
+                      </h4>
                       <div className="space-y-3">
                         <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">Note</span>
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Note
+                          </span>
                           <span className="font-bold text-blue-600 dark:text-blue-400">
                             {projectModal.project.rating}/5
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">Téléchargements</span>
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Téléchargements
+                          </span>
                           <span className="font-bold text-blue-600 dark:text-blue-400">
                             {projectModal.project.downloads}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">Année</span>
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Année
+                          </span>
                           <span className="font-bold text-blue-600 dark:text-blue-400">
                             {projectModal.project.year}
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-600 dark:text-gray-400">Type</span>
+                          <span className="text-gray-600 dark:text-gray-400">
+                            Type
+                          </span>
                           <span className="font-bold text-blue-600 dark:text-blue-400">
                             {projectModal.project.projectType}
                           </span>
@@ -1031,8 +1137,9 @@ function App() {
             </h2>
 
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl text-lg">
-              Passionné par le développement web et la création d'outils pratiques. 
-              J'ai développé plusieurs applications web utiles qui sont disponibles dans ma boutique DevTools Pro.
+              Passionné par le développement web et la création d'outils
+              pratiques. J'ai développé plusieurs applications web utiles qui
+              sont disponibles dans ma boutique DevTools Pro.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -1055,7 +1162,11 @@ function App() {
 
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { value: `${projects.length}`, label: "Projets Live", icon: "🚀" },
+                {
+                  value: `${projects.length}`,
+                  label: "Projets Live",
+                  icon: "🚀",
+                },
                 { value: "5+", label: "Technologies", icon: "💻" },
                 { value: "100%", label: "Fonctionnels", icon: "✅" },
               ].map((stat, index) => (
@@ -1140,9 +1251,7 @@ function App() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-slate-700 flex items-center justify-center">
-                        <div className={skill.textColor}>
-                          {skill.icon}
-                        </div>
+                        <div className={skill.textColor}>{skill.icon}</div>
                       </div>
                       <div className="font-medium dark:text-white text-lg">
                         {skill.name}
@@ -1231,8 +1340,8 @@ function App() {
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                Chaque application de ma boutique a été développée avec soin,
-                en privilégiant l'expérience utilisateur et la performance.
+                Chaque application de ma boutique a été développée avec soin, en
+                privilégiant l'expérience utilisateur et la performance.
               </p>
             </div>
 
@@ -1352,7 +1461,9 @@ function App() {
                       <FaEnvelope className="text-blue-600 dark:text-blue-300 text-xl" />
                     </div>
                     <div>
-                      <div className="font-bold dark:text-white text-lg">Email</div>
+                      <div className="font-bold dark:text-white text-lg">
+                        Email
+                      </div>
                       <div className="text-gray-600 dark:text-gray-300">
                         ezechielben06@gmail.com
                       </div>
@@ -1492,16 +1603,16 @@ function App() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
-            <div className="text-2xl font-bold text-blue-400">Ezechiel HOUNKPE</div>
+            <div className="text-2xl font-bold text-blue-400">
+              Ezechiel HOUNKPE
+            </div>
             <p className="mt-2 text-gray-400">
               Étudiant Développeur Web & Créateur d'outils
             </p>
           </div>
 
           <div className="flex items-center space-x-6">
-            <span className="text-gray-400">
-              Explorez également :
-            </span>
+            <span className="text-gray-400">Explorez également :</span>
             <a
               href="/utility-tools"
               className="text-blue-400 hover:text-blue-300 transition-colors font-medium hover:underline"
@@ -1528,7 +1639,8 @@ function App() {
 
         <div className="border-t border-slate-700 dark:border-slate-800 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Ezechiel HOUNKPE - Tous mes projets sont disponibles et fonctionnels
+            © {new Date().getFullYear()} Ezechiel HOUNKPE - Tous mes projets
+            sont disponibles et fonctionnels
           </p>
           <p className="text-gray-500 text-sm mt-2">
             Développé avec React, Tailwind CSS et passion
@@ -1537,6 +1649,1535 @@ function App() {
       </div>
     </footer>
   );
+  // 🎯 COMPOSANT CV MODAL - Design Élégant
+  const CVModal = () => {
+    const handlePrintCV = () => {
+      setIsPrintMode(true);
+      setTimeout(() => {
+        window.print();
+        setIsPrintMode(false);
+      }, 100);
+    };
+
+    const handleDownloadPDF = async () => {
+  try {
+    // Indicateur de chargement
+    const loadingDiv = document.createElement('div');
+    loadingDiv.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+      ">
+        <div>
+          <div style="
+            width: 60px; height: 60px;
+            border: 4px solid #3b82f6;
+            border-top: 4px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+          "></div>
+          <h3 style="margin-bottom: 10px; font-size: 18px;">
+            Génération du CV en PDF...
+          </h3>
+        </div>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+    `;
+    document.body.appendChild(loadingDiv);
+
+    // Créer le contenu complet en deux parties
+    const pdfContent = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            /* PAGE 1 - Style principal */
+            .page-1 {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              color: #1f2937;
+              width: 794px;
+              padding: 40px;
+              background: white;
+              box-sizing: border-box;
+            }
+            
+            /* PAGE 2 - Suite du contenu */
+            .page-2 {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              color: #1f2937;
+              width: 794px;
+              padding: 40px;
+              background: white;
+              box-sizing: border-box;
+              margin-top: 40px; /* Espace entre les pages */
+            }
+            
+            /* Styles communs */
+            .gradient-text {
+              background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            }
+            
+            .gradient-bg {
+              background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+              color: white;
+            }
+            
+            .card {
+              background: #f8fafc;
+              border-radius: 16px;
+              padding: 25px;
+              margin-bottom: 20px;
+              border-left: 4px solid #3b82f6;
+            }
+            
+            .skill-bar {
+              height: 8px;
+              background: #e5e7eb;
+              border-radius: 4px;
+              overflow: hidden;
+              margin-top: 5px;
+            }
+            
+            .skill-fill {
+              height: 100%;
+              background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+              border-radius: 4px;
+            }
+            
+            .tag {
+              background: white;
+              border: 1px solid #e5e7eb;
+              padding: 6px 14px;
+              border-radius: 8px;
+              font-size: 13px;
+              font-weight: 500;
+              display: inline-block;
+              margin: 2px;
+            }
+            
+            .badge {
+              background: #dbeafe;
+              color: #1d4ed8;
+              padding: 6px 15px;
+              border-radius: 20px;
+              font-size: 14px;
+              font-weight: bold;
+              display: inline-block;
+            }
+            
+            .icon-circle {
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 20px;
+              margin-right: 15px;
+            }
+            
+            h1 { font-size: 42px; font-weight: bold; margin: 0 0 10px 0; }
+            h2 { font-size: 28px; font-weight: bold; margin: 0 0 25px 0; }
+            h3 { font-size: 20px; font-weight: bold; margin: 0 0 8px 0; }
+            p { color: #6b7280; line-height: 1.6; margin: 0 0 20px 0; }
+            
+            .contact-item {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              margin-bottom: 15px;
+            }
+            
+            .contact-icon {
+              width: 40px;
+              height: 40px;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 18px;
+            }
+            
+            .stats {
+              display: flex;
+              justify-content: center;
+              gap: 30px;
+              margin: 30px 0;
+            }
+            
+            .stat-item {
+              text-align: center;
+            }
+            
+            .stat-value {
+              font-size: 32px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            
+            .grid-2-col {
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              gap: 40px;
+              margin-top: 30px;
+            }
+            
+            .footer {
+              text-align: center;
+              margin-top: 60px;
+              padding-top: 30px;
+              border-top: 1px solid #e5e7eb;
+              color: #9ca3af;
+              font-size: 14px;
+            }
+          </style>
+        </head>
+        <body>
+          <!-- PAGE 1 -->
+          <div class="page-1">
+            <!-- En-tête -->
+            <div style="text-align: center; margin-bottom: 40px;">
+              <div class="badge" style="margin-bottom: 20px;">
+                Étudiant Développeur Full Stack
+              </div>
+              
+              <h1 class="gradient-text">Ezechiel HOUNKPE</h1>
+              
+              <p style="font-size: 18px; max-width: 600px; margin: 0 auto 30px auto;">
+                Passionné par la création d'applications web modernes et performantes.
+                Spécialisé dans le développement d'outils pratiques avec React, Node.js 
+                et les technologies web modernes.
+              </p>
+              
+              <!-- Statistiques -->
+              <div class="stats">
+                <div class="stat-item">
+                  <div class="stat-value" style="color: #3b82f6;">${projects.length}+</div>
+                  <div style="font-size: 14px; color: #6b7280;">Projets Live</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value" style="color: #8b5cf6;">100%</div>
+                  <div style="font-size: 14px; color: #6b7280;">Fonctionnels</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value" style="color: #10b981;">5+</div>
+                  <div style="font-size: 14px; color: #6b7280;">Technologies</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coordonnées -->
+            <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
+              <div class="contact-item">
+                <div class="contact-icon" style="background: #dbeafe; color: #3b82f6;">✉️</div>
+                <div>
+                  <div style="font-size: 12px; color: #6b7280;">Email</div>
+                  <div style="font-weight: bold;">ezechielben06@gmail.com</div>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon" style="background: #f3e8ff; color: #8b5cf6;">📱</div>
+                <div>
+                  <div style="font-size: 12px; color: #6b7280;">Téléphone</div>
+                  <div style="font-weight: bold;">+229 65 43 35 36</div>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon" style="background: #fce7f3; color: #ec4899;">📍</div>
+                <div>
+                  <div style="font-size: 12px; color: #6b7280;">Localisation</div>
+                  <div style="font-weight: bold;">Cotonou, Bénin</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grille principale -->
+            <div class="grid-2-col">
+              <!-- Colonne gauche - Page 1 -->
+              <div>
+                <!-- Expérience -->
+                <div style="margin-bottom: 40px;">
+                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div class="icon-circle" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">💼</div>
+                    <h2>Expérience Professionnelle</h2>
+                  </div>
+                  
+                  ${experiences.map(exp => `
+                    <div class="card">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <div>
+                          <h3>${exp.role}</h3>
+                          <div style="color: #3b82f6; font-weight: 600; margin-bottom: 10px;">${exp.company}</div>
+                        </div>
+                        <div class="badge">${exp.year}</div>
+                      </div>
+                      <p>${exp.description}</p>
+                      
+                      <div style="margin-top: 20px;">
+                        <div style="font-weight: 600; margin-bottom: 10px; color: #4b5563;">Réalisations clés :</div>
+                        <ul style="color: #6b7280; padding-left: 20px; margin: 0;">
+                          ${exp.achievements.map(achievement => `
+                            <li style="margin-bottom: 8px;">${achievement}</li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                      
+                      <div style="margin-top: 20px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                          ${exp.technologies.map(tech => `
+                            <span class="tag">${tech}</span>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <!-- Projets - Partie 1 (page 1) -->
+                <div>
+                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div class="icon-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🚀</div>
+                    <h2>Projets Significatifs</h2>
+                  </div>
+                  
+                  ${projects.slice(0, 2).map(project => `
+                    <div class="card" style="background: #f0f9ff;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <h3 style="color: #0369a1;">${project.title}</h3>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                          <span style="color: #f59e0b;">★</span>
+                          <span style="font-weight: bold;">${project.rating}</span>
+                          <span style="color: #6b7280; margin-left: 5px;">(${project.downloads})</span>
+                        </div>
+                      </div>
+                      <p>${project.description}</p>
+                      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px;">
+                        ${project.tags.slice(0, 4).map(tag => `
+                          <span style="background: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; border: 1px solid #bae6fd;">
+                            ${tag}
+                          </span>
+                        `).join('')}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Colonne droite - Page 1 -->
+              <div>
+                <!-- Compétences -->
+                <div style="margin-bottom: 40px;">
+                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div class="icon-circle" style="background: linear-gradient(135deg, #10b981, #059669);">⚡</div>
+                    <h2>Compétences Techniques</h2>
+                  </div>
+                  
+                  ${skills.slice(0, 6).map(skill => `
+                    <div style="margin-bottom: 20px;">
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-weight: 600;">${skill.name}</span>
+                        <span style="font-weight: bold; color: #3b82f6;">${skill.level}%</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: ${skill.level}%"></div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <!-- Technologies -->
+                <div style="margin-bottom: 40px;">
+                  <h2 style="font-size: 24px; margin-bottom: 20px;">Technologies</h2>
+                  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    ${technologies.slice(0, 9).map(tech => `
+                      <div style="
+                        background: white;
+                        border: 1px solid #e5e7eb;
+                        border-radius: 10px;
+                        padding: 15px;
+                        text-align: center;
+                      ">
+                        <div style="font-size: 24px; margin-bottom: 8px;">${tech.icon}</div>
+                        <div style="font-size: 12px; font-weight: 600;">${tech.name}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGE 2 -->
+          <div class="page-2">
+            <!-- Suite de la grille principale -->
+            <div class="grid-2-col">
+              <!-- Colonne gauche - Page 2 -->
+              <div>
+                <!-- Projets - Partie 2 (page 2) -->
+                <div style="margin-bottom: 40px;">
+                  <h2 style="font-size: 28px; margin-bottom: 25px;">Suite des Projets</h2>
+                  
+                  ${projects.slice(2, 4).map(project => `
+                    <div class="card" style="background: #fef3c7;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <h3 style="color: #92400e;">${project.title}</h3>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                          <span style="color: #f59e0b;">★</span>
+                          <span style="font-weight: bold;">${project.rating}</span>
+                        </div>
+                      </div>
+                      <p>${project.description}</p>
+                      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px;">
+                        ${project.tags.slice(0, 4).map(tag => `
+                          <span style="background: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; border: 1px solid #fde68a;">
+                            ${tag}
+                          </span>
+                        `).join('')}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <!-- Liens -->
+                <div>
+                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div class="icon-circle" style="background: linear-gradient(135deg, #ec4899, #db2777);">🔗</div>
+                    <h2>Liens & Réseaux</h2>
+                  </div>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 15px;">
+                    ${socialLinks.map(social => `
+                      <div style="
+                        background: #f8fafc;
+                        border-radius: 12px;
+                        padding: 20px;
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        border: 1px solid #e5e7eb;
+                      ">
+                        <div style="
+                          width: 50px;
+                          height: 50px;
+                          background: white;
+                          border-radius: 10px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          font-size: 22px;
+                          color: #4b5563;
+                          border: 1px solid #e5e7eb;
+                        ">
+                          ${social.label === 'GitHub' ? '🐙' : '💼'}
+                        </div>
+                        <div>
+                          <div style="font-weight: bold; font-size: 16px;">${social.label}</div>
+                          <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">${social.href}</div>
+                        </div>
+                      </div>
+                    `).join('')}
+                    
+                    <div style="
+                      background: linear-gradient(90deg, #dbeafe, #e0e7ff);
+                      border-radius: 12px;
+                      padding: 20px;
+                      border: 1px solid #bfdbfe;
+                    ">
+                      <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="
+                          width: 50px;
+                          height: 50px;
+                          background: white;
+                          border-radius: 10px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          font-size: 22px;
+                          color: #3b82f6;
+                        ">
+                          📦
+                        </div>
+                        <div>
+                          <div style="font-weight: bold; font-size: 16px; color: #1e40af;">Boutique d'outils</div>
+                          <div style="font-size: 14px; color: #3b82f6; margin-top: 4px;">Mes projets live disponibles</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Colonne droite - Page 2 -->
+              <div>
+                <!-- Certifications -->
+                <div style="margin-bottom: 40px;">
+                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div class="icon-circle" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">📜</div>
+                    <h2>Certifications</h2>
+                  </div>
+                  
+                  ${cvCertifications.map(cert => `
+                    <div style="
+                      background: #f0f9ff;
+                      border-radius: 12px;
+                      padding: 20px;
+                      margin-bottom: 15px;
+                      border-left: 4px solid #06b6d4;
+                    ">
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div style="font-weight: bold; font-size: 16px;">${cert.title}</div>
+                        <div class="badge" style="background: #cffafe; color: #0e7490;">${cert.date}</div>
+                      </div>
+                      <div style="font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 10px;">
+                        ${cert.issuer}
+                      </div>
+                      <p style="font-size: 14px; margin-bottom: 15px;">${cert.description}</p>
+                      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        ${cert.skills.map(skill => `
+                          <span style="
+                            background: white;
+                            padding: 4px 10px;
+                            border-radius: 6px;
+                            font-size: 12px;
+                            border: 1px solid #a5f3fc;
+                          ">
+                            ${skill}
+                          </span>
+                        `).join('')}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <!-- Langues -->
+                <div>
+                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div class="icon-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🌐</div>
+                    <h2>Langues</h2>
+                  </div>
+                  
+                  <div style="background: #faf5ff; border-radius: 16px; padding: 25px;">
+                    <div style="margin-bottom: 25px;">
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span style="font-weight: 600;">Français</span>
+                        <span style="font-weight: bold; color: #7c3aed;">Langue maternelle</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 100%"></div>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span style="font-weight: 600;">Anglais</span>
+                        <span style="font-weight: bold; color: #7c3aed;">Intermédiaire</span>
+                      </div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 70%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pied de page -->
+            <div class="footer">
+              <div>© ${new Date().getFullYear()} Ezechiel HOUNKPE - Tous droits réservés</div>
+              <div style="font-size: 12px; margin-top: 5px;">
+                Dernière mise à jour : ${new Date().toLocaleDateString('fr-FR', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                })}
+              </div>
+              <div style="font-size: 12px; margin-top: 5px; color: #3b82f6;">
+                Portfolio : https://votre-portfolio.com
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
+    // Créer un iframe pour afficher le contenu
+    const iframe = document.createElement('iframe');
+    iframe.style.cssText = `
+      position: fixed;
+      left: -9999px;
+      top: 0;
+      width: 794px;
+      height: 2300px; /* Hauteur pour deux pages */
+      border: none;
+      visibility: hidden;
+    `;
+    
+    document.body.appendChild(iframe);
+    
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    iframeDoc.open();
+    iframeDoc.write(pdfContent);
+    iframeDoc.close();
+    
+    // Attendre le chargement
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    // Capturer les deux pages séparément
+    const pages = iframeDoc.querySelectorAll('.page-1, .page-2');
+    
+    // Créer le PDF avec plusieurs pages
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4',
+      compress: true
+    });
+
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      
+      // Créer un canvas pour chaque page
+      const canvas = await html2canvas(page, {
+        scale: 2,
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        logging: false,
+        removeContainer: true,
+      });
+
+      const imgWidth = 210 - 20; // Largeur A4 moins marges
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // Si ce n'est pas la première page, ajouter une nouvelle page
+      if (i > 0) {
+        pdf.addPage();
+      }
+
+      // Centrer verticalement
+      const y = (297 - imgHeight) / 2;
+      
+      pdf.addImage(
+        canvas.toDataURL('image/png', 1.0),
+        'PNG',
+        10,
+        y,
+        imgWidth,
+        imgHeight,
+        undefined,
+        'FAST'
+      );
+    }
+
+    // Nettoyer
+    document.body.removeChild(iframe);
+    document.body.removeChild(loadingDiv);
+
+    // Sauvegarder
+    pdf.save(`CV-Ezechiel-Hounkpe-Complet.pdf`);
+
+    // Notification
+    setFormStatus({ type: "success", message: "✅ CV complet téléchargé (2 pages) !" });
+    setTimeout(() => setFormStatus({ type: "", message: "" }), 4000);
+
+  } catch (error) {
+    console.error('Erreur PDF multi-pages:', error);
+    
+    // Nettoyer
+    const iframe = document.querySelector('iframe');
+    if (iframe) document.body.removeChild(iframe);
+    
+    const loadingDiv = document.querySelector('div[style*="position: fixed"][style*="background: rgba"]');
+    if (loadingDiv) document.body.removeChild(loadingDiv);
+
+    // Fallback simple
+    const pdf = new jsPDF();
+    pdf.text('CV - Ezechiel HOUNKPE', 20, 20);
+    pdf.text('Le CV complet est disponible sur votre portfolio.', 20, 40);
+    pdf.save('CV-Info.pdf');
+    
+    setFormStatus({ 
+      type: "error", 
+      message: "❌ Version simple générée. Essayez l'impression directe (Ctrl+P)." 
+    });
+  }
+};
+
+    const cvCertifications = [
+      {
+        title: "JavaScript Moderne ES6+",
+        issuer: "FreeCodeCamp",
+        date: "2023",
+        description:
+          "Formation approfondie sur les nouvelles fonctionnalités JavaScript",
+        skills: ["ES6+", "Async/Await", "Modules", "Design Patterns"],
+      },
+      {
+        title: "Git & GitHub Professionnel",
+        issuer: "LinkedIn Learning",
+        date: "2022",
+        description:
+          "Gestion de version avancée, workflows collaboratifs et intégration continue.",
+        skills: ["Git", "GitHub", "CI/CD", "Branches", "Collaboration"],
+      },
+    ];
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div
+          className="relative bg-white dark:bg-slate-800 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl print-mode scroll-smooth"
+          ref={cvRef}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* En-tête du modal - Design Premium */}
+          <div className="sticky top-0 bg-white dark:bg-slate-800 p-6 border-b border-gray-200 dark:border-slate-700 flex justify-between items-center z-10 no-print backdrop-blur-sm bg-white/95 dark:bg-slate-800/95">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                <FaGraduationCap className="text-white text-lg" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold dark:text-white">
+                  Mon CV Professionnel
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Développeur Full Stack
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={handlePrintCV}
+                className="px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all flex items-center shadow-md"
+                title="Imprimer le CV"
+              >
+                <FaPrint className="mr-2" />
+                <span className="hidden sm:inline">Imprimer</span>
+              </button>
+              <button
+                onClick={handleDownloadPDF}
+                className="px-4 py-2.5 bg-white dark:bg-slate-700 text-gray-800 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-slate-600 transition-all flex items-center border border-gray-200 dark:border-slate-600 shadow-sm"
+                title="Télécharger en PDF"
+              >
+                <FaDownload className="mr-2" />
+                <span className="hidden sm:inline">PDF</span>
+              </button>
+              <button
+                onClick={() => setShowCVModal(false)}
+                className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-slate-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-600 transition-all hover:scale-105"
+              >
+                <FaTimes className="dark:text-gray-300" />
+              </button>
+            </div>
+          </div>
+
+          {/* Contenu du CV - Design Élégant */}
+          <div className="p-6 md:p-8 print-break-avoid">
+            {/* En-tête du CV - Design Premium */}
+            <div className="mb-10 print-break-avoid">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-8">
+                {/* Photo de profil avec effet premium */}
+                <div className="relative">
+                  <div className="w-36 h-36 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-700 shadow-2xl">
+                    <img
+                      src="/profile.jpeg"
+                      alt="Ezechiel HOUNKPE"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-xl font-bold shadow-lg text-sm">
+                    {projects.length} projets
+                  </div>
+                </div>
+
+                {/* Informations personnelles */}
+                <div className="flex-1 text-center lg:text-left">
+                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm mb-4">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                    Étudiant Développeur Full Stack
+                  </div>
+
+                  <h1 className="text-4xl md:text-5xl font-bold mb-3">
+                    <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                      Ezechiel HOUNKPE
+                    </span>
+                  </h1>
+
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg max-w-2xl leading-relaxed">
+                    Passionné par la création d'applications web modernes et
+                    performantes. Spécialisé dans le développement d'outils
+                    pratiques avec React, Node.js et les technologies web
+                    modernes.
+                  </p>
+
+                  {/* Contacts élégants */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-2">
+                    <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 flex items-center justify-center">
+                        <FaEnvelope className="text-blue-600 dark:text-blue-300" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                          Email
+                        </div>
+                        <div className="font-medium dark:text-white">
+                          ezechielben06@gmail.com
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center">
+                        <FaPhoneAlt className="text-purple-600 dark:text-purple-300" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                          Téléphone
+                        </div>
+                        <div className="font-medium dark:text-white">
+                          +229 65 43 35 36
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-pink-100 to-pink-50 dark:from-pink-900/30 dark:to-pink-800/30 flex items-center justify-center">
+                        <FaMapMarkerAlt className="text-pink-600 dark:text-pink-300" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                          Localisation
+                        </div>
+                        <div className="font-medium dark:text-white">
+                          Cotonou | Bénin
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Grille de contenu du CV - Design Moderne */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Colonne principale */}
+              <div className="lg:col-span-2 space-y-8">
+                {/* Section Expérience - Design Amélioré */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mr-3">
+                      <FaBriefcase className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Expérience Professionnelle
+                    </h3>
+                  </div>
+
+                  <div className="space-y-6">
+                    {experiences.map((exp, index) => (
+                      <div
+                        key={index}
+                        className="relative bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 group"
+                      >
+                        {/* Timeline dot */}
+                        <div className="absolute -left-3 top-6 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 border-4 border-white dark:border-slate-800"></div>
+
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                          <div>
+                            <h4 className="text-xl font-bold dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                              {exp.role}
+                            </h4>
+                            <div className="flex items-center mt-2 space-x-3">
+                              <span className="text-blue-600 dark:text-blue-400 font-medium">
+                                {exp.company}
+                              </span>
+                              <span className="px-3 py-1 bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold">
+                                {exp.year}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p className="text-gray-600 dark:text-gray-300 mb-5">
+                          {exp.description}
+                        </p>
+
+                        <div>
+                          <h5 className="font-semibold mb-3 dark:text-gray-300 flex items-center">
+                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-2">
+                              <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                            </div>
+                            Réalisations clés :
+                          </h5>
+                          <ul className="space-y-2">
+                            {exp.achievements.map((achievement, idx) => (
+                              <li key={idx} className="flex items-start">
+                                <div className="w-6 h-6 flex items-center justify-center mr-3 mt-0.5">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                                </div>
+                                <span className="text-gray-600 dark:text-gray-400">
+                                  {achievement}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Technologies */}
+                        <div className="mt-6 pt-6 border-t border-gray-100 dark:border-slate-700">
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies.map((tech, idx) => (
+                              <span
+                                key={idx}
+                                className="px-3 py-1.5 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-gray-200 dark:border-slate-600"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section Projets - Design Amélioré */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center mr-3">
+                      <FaCode className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Projets Significatifs
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    {projects.slice(0, 3).map((project) => (
+                      <div
+                        key={project.id}
+                        className="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 hover:border-purple-300 dark:hover:border-purple-500 transition-all duration-300 hover:shadow-lg"
+                      >
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h4 className="font-bold text-lg dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                              {project.title}
+                            </h4>
+                            <div className="flex items-center mt-2 space-x-3">
+                              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                <FaStar className="w-4 h-4 text-yellow-500 fill-current mr-1" />
+                                <span>{project.rating}</span>
+                              </div>
+                              <span className="text-sm text-gray-500 dark:text-gray-400">
+                                • {project.downloads} téléchargements
+                              </span>
+                            </div>
+                          </div>
+                          <span className="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-800/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-semibold">
+                            {project.year}
+                          </span>
+                        </div>
+
+                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                          {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.slice(0, 4).map((tag, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-600 dark:to-slate-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Colonne latérale */}
+              <div className="space-y-8">
+                {/* Section Compétences Techniques - Design Amélioré */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 flex items-center justify-center mr-3">
+                      <FaTools className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Compétences Techniques
+                    </h3>
+                  </div>
+
+                  <div className="space-y-5">
+                    {skills.slice(0, 6).map((skill) => (
+                      <div key={skill.name} className="group">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center space-x-3">
+                            <div
+                              className={`w-8 h-8 rounded-lg flex items-center justify-center ${skill.textColor} bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-700 dark:to-slate-800`}
+                            >
+                              {skill.icon}
+                            </div>
+                            <span className="dark:text-gray-300 font-medium">
+                              {skill.name}
+                            </span>
+                          </div>
+                          <span className="font-bold text-blue-600 dark:text-blue-400">
+                            {skill.level}%
+                          </span>
+                        </div>
+
+                        <div className="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full bg-gradient-to-r ${skill.gradientColor} rounded-full transition-all duration-1000 group-hover:shadow-lg`}
+                            style={{ width: `${skill.level}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section Technologies - Design Amélioré */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center mr-3">
+                      <FaCode className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Technologies
+                    </h3>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-3">
+                    {technologies.slice(0, 9).map((tech) => (
+                      <div
+                        key={tech.name}
+                        className="group flex flex-col items-center p-3 bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 hover:scale-105"
+                      >
+                        <div
+                          className={`text-2xl ${tech.color} mb-2 group-hover:scale-110 transition-transform`}
+                        >
+                          {tech.icon}
+                        </div>
+                        <span className="text-xs font-medium dark:text-gray-300 text-center">
+                          {tech.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section Certifications - NOUVELLE SECTION */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center mr-3">
+                      <FaGraduationCap className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Certifications
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    {cvCertifications.map((cert, index) => (
+                      <div
+                        key={index}
+                        className="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-4 border border-gray-200 dark:border-slate-700 hover:border-cyan-300 dark:hover:border-cyan-500 transition-all duration-300"
+                      >
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="font-bold text-sm dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                            {cert.title}
+                          </h4>
+                          <span className="px-2 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-800/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-semibold">
+                            {cert.date}
+                          </span>
+                        </div>
+
+                        <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                          {cert.issuer}
+                        </div>
+
+                        <p className="text-gray-600 dark:text-gray-400 text-xs mb-3">
+                          {cert.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5">
+                          {cert.skills.map((skill, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-1 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-600 dark:to-slate-800 text-gray-700 dark:text-gray-300 rounded text-xs"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section Langues - Design Amélioré */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 flex items-center justify-center mr-3">
+                      <FaComment className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Langues
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    {[
+                      {
+                        language: "Français",
+                        level: "Langue maternelle",
+                        percentage: 100,
+                        color: "from-blue-500 to-blue-600",
+                      },
+                      {
+                        language: "Anglais",
+                        level: "Intermédiaire",
+                        percentage: 70,
+                        color: "from-purple-500 to-purple-600",
+                      },
+                    ].map((lang, idx) => (
+                      <div key={idx} className="group">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="dark:text-gray-300 font-medium">
+                            {lang.language}
+                          </span>
+                          <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
+                            {lang.level}
+                          </span>
+                        </div>
+                        <div className="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full bg-gradient-to-r ${lang.color} rounded-full transition-all duration-1000`}
+                            style={{ width: `${lang.percentage}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section Liens - Design Amélioré */}
+                <div className="print-break-avoid">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 flex items-center justify-center mr-3">
+                      <FaExternalLinkAlt className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold dark:text-white">
+                      Liens
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3">
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        className="group flex items-center p-3 bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 hover:border-pink-300 dark:hover:border-pink-500 transition-all duration-300 hover:scale-102"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 dark:from-slate-600 dark:to-slate-800 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                          <div className="text-gray-700 dark:text-gray-300 text-lg">
+                            {social.icon}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-medium dark:text-white">
+                            {social.label}
+                          </div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">
+                            Profil professionnel
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+
+                    <div className="group p-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300">
+                      <div className="flex items-center">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-800/30 dark:to-blue-700/30 flex items-center justify-center mr-3">
+                          <span className="text-lg">📦</span>
+                        </div>
+                        <div>
+                          <div className="font-medium dark:text-white">
+                            Boutique d'outils
+                          </div>
+                          <div className="text-xs text-blue-600 dark:text-blue-400">
+                            Mes projets live
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pied de page du CV - Design Amélioré */}
+          <div className="border-t border-gray-200 dark:border-slate-700 p-6 text-center text-gray-500 dark:text-gray-400 text-sm print-break-avoid">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="mb-4 md:mb-0">
+                <p className="font-medium dark:text-gray-300">
+                  © {new Date().getFullYear()} Ezechiel HOUNKPE
+                </p>
+                <p className="text-xs">
+                  Tous droits réservés • Portfolio professionnel
+                </p>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="text-xs">
+                  <span className="font-medium">Dernière mise à jour : </span>
+                  {new Date().toLocaleDateString("fr-FR", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </div>
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // 🎯 COMPOSANT CERTIFICATIONS
+  const Certifications = () => {
+    const [activeFilter, setActiveFilter] = useState("all");
+
+    const certifications = [
+      {
+        id: 1,
+        title: "JavaScript Moderne ES6+",
+        issuer: "FreeCodeCamp",
+        date: "2023",
+        description:
+          "Formation complète sur les fonctionnalités modernes de JavaScript et les bonnes pratiques.",
+        skills: ["ES6+", "Async/Await", "Modules", "Design Patterns", "OOP"],
+        image:
+          "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        credentialUrl: "#",
+        category: "frontend",
+        duration: "45 heures",
+        level: "Intermédiaire",
+        badgeColor: "from-yellow-500 to-orange-500",
+      },
+      {
+        id: 2,
+        title: "Git & GitHub Professionnel",
+        issuer: "LinkedIn Learning",
+        date: "2022",
+        description:
+          "Gestion de version avancée, workflows collaboratifs et intégration continue.",
+        skills: ["Git", "GitHub", "CI/CD", "Branches", "Collaboration"],
+        image:
+          "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        credentialUrl: "#",
+        category: "tools",
+        duration: "15 heures",
+        level: "Débutant",
+        badgeColor: "from-orange-500 to-red-500",
+      },
+    ];
+
+    const filters = [
+      { id: "all", label: "Toutes", count: certifications.length },
+      {
+        id: "frontend",
+        label: "Frontend",
+        count: certifications.filter((c) => c.category === "frontend").length,
+      },
+      {
+        id: "backend",
+        label: "Backend",
+        count: certifications.filter((c) => c.category === "backend").length,
+      },
+      {
+        id: "web",
+        label: "Full Stack",
+        count: certifications.filter((c) => c.category === "web").length,
+      },
+      {
+        id: "tools",
+        label: "Outils",
+        count: certifications.filter((c) => c.category === "tools").length,
+      },
+    ];
+
+    const filteredCerts =
+      activeFilter === "all"
+        ? certifications
+        : certifications.filter((cert) => cert.category === activeFilter);
+
+    return (
+      <section
+        id="certifications"
+        className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-slate-800 dark:to-slate-900 transition-colors duration-300"
+      >
+        <div className="container mx-auto px-4">
+          {/* En-tête de section */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm mb-4">
+              <FaGraduationCap className="mr-2" />
+              Certifications & Formations
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              Mes Certifications
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
+              Diplômes et certifications obtenus pour valider mes compétences en
+              développement web
+            </p>
+          </div>
+
+          {/* Filtres */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+                className={`px-5 py-2.5 rounded-full transition-all duration-300 flex items-center space-x-2 ${
+                  activeFilter === filter.id
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                    : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700"
+                }`}
+              >
+                <span>{filter.label}</span>
+                <span
+                  className={`px-2 py-0.5 rounded-full text-xs ${
+                    activeFilter === filter.id
+                      ? "bg-white/20"
+                      : "bg-gray-100 dark:bg-slate-700"
+                  }`}
+                >
+                  {filter.count}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Grille de certifications */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {filteredCerts.map((cert) => (
+              <div
+                key={cert.id}
+                className="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-cyan-500 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+              >
+                {/* En-tête de la certification avec badge */}
+                <div className="relative h-48 overflow-hidden">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${cert.badgeColor} opacity-10`}
+                  ></div>
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <span className="px-3 py-1 bg-gradient-to-r  from-blue-600 to-purple-600 text-white text-xs font-bold rounded-full shadow-lg">
+                      {cert.level}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <FaGraduationCap className="text-white w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-white text-sm font-semibold">
+                          Durée
+                        </div>
+                        <div className="text-white text-xs">
+                          {cert.duration}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Contenu de la certification */}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors mb-2">
+                      {cert.title}
+                    </h3>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center text-gray-600 dark:text-gray-400">
+                        <span className="text-sm">Par</span>
+                        <span className="ml-2 font-semibold text-blue-600 dark:text-blue-400">
+                          {cert.issuer}
+                        </span>
+                      </div>
+                      <span className="px-3 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">
+                        {cert.date}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-400 mb-5 line-clamp-3">
+                    {cert.description}
+                  </p>
+
+                  {/* Compétences */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                      Compétences acquises :
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {cert.skills.map((skill, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1.5 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-800 text-gray-700 dark:text-gray-300 rounded-lg text-xs font-medium hover:scale-105 transition-transform"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex items-center justify-between pt-5 border-t border-gray-100 dark:border-slate-700">
+                    <a
+                      href={cert.credentialUrl}
+                      className="flex items-center text-blue-600 dark:text-cyan-400 font-semibold text-sm hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaExternalLinkAlt className="w-4 h-4 mr-2" />
+                      Voir la certification
+                    </a>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                        Validée
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Effet de bordure colorée */}
+                <div
+                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.badgeColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                ></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Statistiques - Design aligné avec le portfolio */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 mb-12 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-2">
+                  {certifications.length}+
+                </div>
+                <div className="text-gray-700 dark:text-gray-300 font-medium">
+                  Certifications
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  Validées
+                </div>
+              </div>
+
+              <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-800/20 rounded-xl hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-2">
+                  5+
+                </div>
+                <div className="text-gray-700 dark:text-gray-300 font-medium">
+                  Plateformes
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  Prestigieuses
+                </div>
+              </div>
+
+              <div className="text-center p-4 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-800/20 rounded-xl hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 dark:from-emerald-400 dark:to-green-400 bg-clip-text text-transparent mb-2">
+                  100%
+                </div>
+                <div className="text-gray-700 dark:text-gray-300 font-medium">
+                  Validées
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  Taux de réussite
+                </div>
+              </div>
+
+              <div className="text-center p-4 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-800/20 rounded-xl hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
+                  500h+
+                </div>
+                <div className="text-gray-700 dark:text-gray-300 font-medium">
+                  Formation
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  Cumulées
+                </div>
+              </div>
+            </div>
+
+            {/* Légende */}
+            <div className="mt-6 pt-6 border-t border-gray-100 dark:border-slate-700">
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                  <span>Frontend</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                  <span>Backend</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                  <span>Full Stack</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-amber-500 mr-2"></div>
+                  <span>Outils</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* CTA */}
+          <div className="text-center">
+            <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+              Toutes les certifications sont vérifiables en ligne
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  };
 
   // 🎯 COMPOSANT BACK TO TOP
   const BackToTop = () => (
@@ -1563,12 +3204,14 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Certifications />
         <Skills />
         <Projects />
         <Contact />
       </main>
       <Footer />
       <BackToTop />
+      {showCVModal && <CVModal />}
     </div>
   );
 }
