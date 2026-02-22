@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+
+import jsPDF from "jspdf";
+import html2pdf from "html2pdf.js";
+import html2canvas from "html2canvas";
 import { useState, useEffect, useMemo, useRef } from "react";
 import {
   FaMoon,
@@ -49,6 +51,17 @@ import {
   SiFirebase,
   SiNextdotjs,
   SiRedux,
+} from "react-icons/si";
+
+import {
+  SiPython,
+  SiDjango,
+  SiFastapi,
+  SiFlask,
+  SiPostgresql,
+  SiSqlite,
+  SiPytest,
+  SiJupyter,
 } from "react-icons/si";
 
 // Styles CSS globaux pour l'impression
@@ -149,7 +162,7 @@ function App() {
         "Local Storage",
         "React DnD",
       ],
-      year: 2024,
+      year: 2025,
       status: "Live",
       projectType: "Outil de développement",
       rating: 4.8,
@@ -190,7 +203,7 @@ function App() {
         "Local Storage",
         "Service Workers",
       ],
-      year: 2024,
+      year: 2025,
       status: "Live",
       projectType: "Application Web",
       rating: 4.1,
@@ -231,7 +244,7 @@ function App() {
         "Context API",
         "HTML2Canvas",
       ],
-      year: 2024,
+      year: 2025,
       status: "Live",
       projectType: "Outil de carrière",
       rating: 4.9,
@@ -277,7 +290,7 @@ function App() {
         "Tailwind CSS",
         "React Query",
       ],
-      year: 2024,
+      year: 2025,
       status: "Live",
       projectType: "Outil de design",
       rating: 4.9,
@@ -328,13 +341,122 @@ function App() {
         "Firebase",
         "Redux",
       ],
-      year: 2024,
+      year: 2026,
       status: "Démo",
       projectType: "Réseau Social",
       rating: 4.7,
       downloads: "1.5k",
       color: "from-blue-600 to-blue-800",
       specialBadge: "Nouveau",
+    },
+    {
+      id: 6,
+      title: "Django Blog API Pro",
+      shortTitle: "Django Blog API",
+      description:
+        "API RESTful complète pour un système de blog avec Django REST Framework, authentification JWT et documentation Swagger.",
+      fullDescription:
+        "Plateforme backend robuste développée avec Django et Django REST Framework. Cette API offre une solution complète pour la gestion de contenu avec authentification sécurisée, permissions granulaires, système de commentaires, et documentation interactive automatique. Idéal pour alimenter des applications frontend modernes.",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      previewImages: [
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      ],
+      tags: [
+        "Django",
+        "DRF",
+        "API REST",
+        "JWT",
+        "PostgreSQL",
+        "Swagger",
+        "Authentication",
+      ],
+      category: "web",
+      github: "https://github.com/ezechielben06/django-blog-api",
+      demo: "https://django-blog-api-demo.herokuapp.com/api/docs",
+      features: [
+        "Authentification JWT complète",
+        "CRUD complet pour articles et catégories",
+        "Système de commentaires avec modération",
+        "Permissions personnalisées (admin, auteur, lecteur)",
+        "Recherche et filtrage avancés",
+        "Pagination et versioning API",
+        "Documentation Swagger/ReDoc interactive",
+        "Tests unitaires avec Pytest",
+      ],
+      technologies: [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "JWT",
+        "Swagger",
+        "Pytest",
+        "Docker",
+      ],
+      year: 2024,
+      status: "Live",
+      projectType: "Backend API",
+      rating: 4.9,
+      downloads: "1.2k",
+      color: "from-green-600 to-teal-600",
+      specialBadge: "Nouveau",
+    },
+    {
+      id: 7,
+      title: "E-commerce Backend Django",
+      shortTitle: "Django E-commerce",
+      description:
+        "Backend e-commerce complet avec gestion de produits, panier, commandes et paiements intégrés via Stripe.",
+      fullDescription:
+        "Solution backend complète pour une plateforme e-commerce développée avec Django. Cette API gère l'intégralité du cycle de vente : catalogue produits, gestion des stocks, panier d'achat, processus de commande, et intégration de paiement Stripe. Architecture modulaire et scalable prête pour la production.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      previewImages: [
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      ],
+      tags: [
+        "Django",
+        "E-commerce",
+        "Stripe",
+        "Payments",
+        "Cart",
+        "Orders",
+        "Products",
+      ],
+      category: "web",
+      github: "https://github.com/ezechielben06/django-ecommerce-backend",
+      demo: "https://django-ecommerce-api.herokuapp.com/api",
+      features: [
+        "Gestion complète du catalogue produits",
+        "Système de panier avec sessions",
+        "Processus de commande et facturation",
+        "Intégration Stripe pour paiements",
+        "Gestion des stocks automatique",
+        "Historique des commandes utilisateur",
+        "Administration personnalisée",
+        "Webhooks pour paiements",
+      ],
+      technologies: [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Stripe API",
+        "Celery",
+        "Redis",
+        "Docker",
+      ],
+      year: 2024,
+      status: "Développement",
+      projectType: "Backend API",
+      rating: 4.8,
+      downloads: "856",
+      color: "from-purple-600 to-pink-600",
     },
   ];
 
@@ -390,6 +512,22 @@ function App() {
       textColor: "text-blue-500",
       icon: <SiTailwindcss />,
     },
+    // NOUVEAU : Python
+    {
+      name: "Python",
+      level: 82,
+      gradientColor: "from-blue-500 to-blue-600",
+      textColor: "text-blue-500",
+      icon: <SiPython />,
+    },
+    // NOUVEAU : Django
+    {
+      name: "Django & DRF",
+      level: 78,
+      gradientColor: "from-green-600 to-green-700",
+      textColor: "text-green-600",
+      icon: <SiDjango />,
+    },
     {
       name: "Node.js",
       level: 80,
@@ -425,12 +563,18 @@ function App() {
     { icon: <SiRedux />, name: "Redux", color: "text-purple-500" },
     { icon: <SiGit />, name: "Git", color: "text-orange-600" },
     { icon: <SiFigma />, name: "Figma", color: "text-purple-500" },
+    { icon: <SiPython />, name: "Python", color: "text-blue-500" },
+    { icon: <SiDjango />, name: "Django", color: "text-green-700" },
+    { icon: <SiFastapi />, name: "FastAPI", color: "text-teal-500" },
+    { icon: <SiPostgresql />, name: "PostgreSQL", color: "text-blue-600" },
+    { icon: <SiSqlite />, name: "SQLite", color: "text-blue-400" },
+    { icon: <SiPytest />, name: "Pytest", color: "text-red-500" },
   ];
 
   // 🎯 EXPÉRIENCES
   const experiences = [
     {
-      year: "2023 - Présent",
+      year: "2023 - 2026",
       role: "Étudiant en Développement Web",
       company: "Auto-formation et Projets Personnels",
       description: "Développement de projets full-stack et outils web avancés.",
@@ -1167,7 +1311,7 @@ function App() {
                   label: "Projets Live",
                   icon: "🚀",
                 },
-                { value: "5+", label: "Technologies", icon: "💻" },
+                { value: "8+", label: "Technologies", icon: "💻" },
                 { value: "100%", label: "Fonctionnels", icon: "✅" },
               ].map((stat, index) => (
                 <div
@@ -1190,7 +1334,7 @@ function App() {
                 Stack principale :
               </span>
               <div className="flex space-x-2">
-                {technologies.slice(0, 5).map((tech, index) => (
+                {technologies.slice(0, 7).map((tech, index) => (
                   <div
                     key={index}
                     className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center hover:scale-110 transition-transform"
@@ -1659,669 +1803,7 @@ function App() {
       }, 100);
     };
 
-    const handleDownloadPDF = async () => {
-  try {
-    // Indicateur de chargement
-    const loadingDiv = document.createElement('div');
-    loadingDiv.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        color: white;
-        font-family: sans-serif;
-        text-align: center;
-      ">
-        <div>
-          <div style="
-            width: 60px; height: 60px;
-            border: 4px solid #3b82f6;
-            border-top: 4px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-          "></div>
-          <h3 style="margin-bottom: 10px; font-size: 18px;">
-            Génération du CV en PDF...
-          </h3>
-        </div>
-      </div>
-      <style>
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      </style>
-    `;
-    document.body.appendChild(loadingDiv);
-
-    // Créer le contenu complet en deux parties
-    const pdfContent = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            /* PAGE 1 - Style principal */
-            .page-1 {
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-              color: #1f2937;
-              width: 794px;
-              padding: 40px;
-              background: white;
-              box-sizing: border-box;
-            }
-            
-            /* PAGE 2 - Suite du contenu */
-            .page-2 {
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-              color: #1f2937;
-              width: 794px;
-              padding: 40px;
-              background: white;
-              box-sizing: border-box;
-              margin-top: 40px; /* Espace entre les pages */
-            }
-            
-            /* Styles communs */
-            .gradient-text {
-              background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              background-clip: text;
-            }
-            
-            .gradient-bg {
-              background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-              color: white;
-            }
-            
-            .card {
-              background: #f8fafc;
-              border-radius: 16px;
-              padding: 25px;
-              margin-bottom: 20px;
-              border-left: 4px solid #3b82f6;
-            }
-            
-            .skill-bar {
-              height: 8px;
-              background: #e5e7eb;
-              border-radius: 4px;
-              overflow: hidden;
-              margin-top: 5px;
-            }
-            
-            .skill-fill {
-              height: 100%;
-              background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-              border-radius: 4px;
-            }
-            
-            .tag {
-              background: white;
-              border: 1px solid #e5e7eb;
-              padding: 6px 14px;
-              border-radius: 8px;
-              font-size: 13px;
-              font-weight: 500;
-              display: inline-block;
-              margin: 2px;
-            }
-            
-            .badge {
-              background: #dbeafe;
-              color: #1d4ed8;
-              padding: 6px 15px;
-              border-radius: 20px;
-              font-size: 14px;
-              font-weight: bold;
-              display: inline-block;
-            }
-            
-            .icon-circle {
-              width: 50px;
-              height: 50px;
-              border-radius: 12px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: white;
-              font-size: 20px;
-              margin-right: 15px;
-            }
-            
-            h1 { font-size: 42px; font-weight: bold; margin: 0 0 10px 0; }
-            h2 { font-size: 28px; font-weight: bold; margin: 0 0 25px 0; }
-            h3 { font-size: 20px; font-weight: bold; margin: 0 0 8px 0; }
-            p { color: #6b7280; line-height: 1.6; margin: 0 0 20px 0; }
-            
-            .contact-item {
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              margin-bottom: 15px;
-            }
-            
-            .contact-icon {
-              width: 40px;
-              height: 40px;
-              border-radius: 10px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 18px;
-            }
-            
-            .stats {
-              display: flex;
-              justify-content: center;
-              gap: 30px;
-              margin: 30px 0;
-            }
-            
-            .stat-item {
-              text-align: center;
-            }
-            
-            .stat-value {
-              font-size: 32px;
-              font-weight: bold;
-              margin-bottom: 5px;
-            }
-            
-            .grid-2-col {
-              display: grid;
-              grid-template-columns: 2fr 1fr;
-              gap: 40px;
-              margin-top: 30px;
-            }
-            
-            .footer {
-              text-align: center;
-              margin-top: 60px;
-              padding-top: 30px;
-              border-top: 1px solid #e5e7eb;
-              color: #9ca3af;
-              font-size: 14px;
-            }
-          </style>
-        </head>
-        <body>
-          <!-- PAGE 1 -->
-          <div class="page-1">
-            <!-- En-tête -->
-            <div style="text-align: center; margin-bottom: 40px;">
-              <div class="badge" style="margin-bottom: 20px;">
-                Étudiant Développeur Full Stack
-              </div>
-              
-              <h1 class="gradient-text">Ezechiel HOUNKPE</h1>
-              
-              <p style="font-size: 18px; max-width: 600px; margin: 0 auto 30px auto;">
-                Passionné par la création d'applications web modernes et performantes.
-                Spécialisé dans le développement d'outils pratiques avec React, Node.js 
-                et les technologies web modernes.
-              </p>
-              
-              <!-- Statistiques -->
-              <div class="stats">
-                <div class="stat-item">
-                  <div class="stat-value" style="color: #3b82f6;">${projects.length}+</div>
-                  <div style="font-size: 14px; color: #6b7280;">Projets Live</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-value" style="color: #8b5cf6;">100%</div>
-                  <div style="font-size: 14px; color: #6b7280;">Fonctionnels</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-value" style="color: #10b981;">5+</div>
-                  <div style="font-size: 14px; color: #6b7280;">Technologies</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Coordonnées -->
-            <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
-              <div class="contact-item">
-                <div class="contact-icon" style="background: #dbeafe; color: #3b82f6;">✉️</div>
-                <div>
-                  <div style="font-size: 12px; color: #6b7280;">Email</div>
-                  <div style="font-weight: bold;">ezechielben06@gmail.com</div>
-                </div>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon" style="background: #f3e8ff; color: #8b5cf6;">📱</div>
-                <div>
-                  <div style="font-size: 12px; color: #6b7280;">Téléphone</div>
-                  <div style="font-weight: bold;">+229 65 43 35 36</div>
-                </div>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon" style="background: #fce7f3; color: #ec4899;">📍</div>
-                <div>
-                  <div style="font-size: 12px; color: #6b7280;">Localisation</div>
-                  <div style="font-weight: bold;">Cotonou, Bénin</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Grille principale -->
-            <div class="grid-2-col">
-              <!-- Colonne gauche - Page 1 -->
-              <div>
-                <!-- Expérience -->
-                <div style="margin-bottom: 40px;">
-                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                    <div class="icon-circle" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">💼</div>
-                    <h2>Expérience Professionnelle</h2>
-                  </div>
-                  
-                  ${experiences.map(exp => `
-                    <div class="card">
-                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <div>
-                          <h3>${exp.role}</h3>
-                          <div style="color: #3b82f6; font-weight: 600; margin-bottom: 10px;">${exp.company}</div>
-                        </div>
-                        <div class="badge">${exp.year}</div>
-                      </div>
-                      <p>${exp.description}</p>
-                      
-                      <div style="margin-top: 20px;">
-                        <div style="font-weight: 600; margin-bottom: 10px; color: #4b5563;">Réalisations clés :</div>
-                        <ul style="color: #6b7280; padding-left: 20px; margin: 0;">
-                          ${exp.achievements.map(achievement => `
-                            <li style="margin-bottom: 8px;">${achievement}</li>
-                          `).join('')}
-                        </ul>
-                      </div>
-                      
-                      <div style="margin-top: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                          ${exp.technologies.map(tech => `
-                            <span class="tag">${tech}</span>
-                          `).join('')}
-                        </div>
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-
-                <!-- Projets - Partie 1 (page 1) -->
-                <div>
-                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                    <div class="icon-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🚀</div>
-                    <h2>Projets Significatifs</h2>
-                  </div>
-                  
-                  ${projects.slice(0, 2).map(project => `
-                    <div class="card" style="background: #f0f9ff;">
-                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <h3 style="color: #0369a1;">${project.title}</h3>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                          <span style="color: #f59e0b;">★</span>
-                          <span style="font-weight: bold;">${project.rating}</span>
-                          <span style="color: #6b7280; margin-left: 5px;">(${project.downloads})</span>
-                        </div>
-                      </div>
-                      <p>${project.description}</p>
-                      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px;">
-                        ${project.tags.slice(0, 4).map(tag => `
-                          <span style="background: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; border: 1px solid #bae6fd;">
-                            ${tag}
-                          </span>
-                        `).join('')}
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-              </div>
-
-              <!-- Colonne droite - Page 1 -->
-              <div>
-                <!-- Compétences -->
-                <div style="margin-bottom: 40px;">
-                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                    <div class="icon-circle" style="background: linear-gradient(135deg, #10b981, #059669);">⚡</div>
-                    <h2>Compétences Techniques</h2>
-                  </div>
-                  
-                  ${skills.slice(0, 6).map(skill => `
-                    <div style="margin-bottom: 20px;">
-                      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                        <span style="font-weight: 600;">${skill.name}</span>
-                        <span style="font-weight: bold; color: #3b82f6;">${skill.level}%</span>
-                      </div>
-                      <div class="skill-bar">
-                        <div class="skill-fill" style="width: ${skill.level}%"></div>
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-
-                <!-- Technologies -->
-                <div style="margin-bottom: 40px;">
-                  <h2 style="font-size: 24px; margin-bottom: 20px;">Technologies</h2>
-                  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-                    ${technologies.slice(0, 9).map(tech => `
-                      <div style="
-                        background: white;
-                        border: 1px solid #e5e7eb;
-                        border-radius: 10px;
-                        padding: 15px;
-                        text-align: center;
-                      ">
-                        <div style="font-size: 24px; margin-bottom: 8px;">${tech.icon}</div>
-                        <div style="font-size: 12px; font-weight: 600;">${tech.name}</div>
-                      </div>
-                    `).join('')}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PAGE 2 -->
-          <div class="page-2">
-            <!-- Suite de la grille principale -->
-            <div class="grid-2-col">
-              <!-- Colonne gauche - Page 2 -->
-              <div>
-                <!-- Projets - Partie 2 (page 2) -->
-                <div style="margin-bottom: 40px;">
-                  <h2 style="font-size: 28px; margin-bottom: 25px;">Suite des Projets</h2>
-                  
-                  ${projects.slice(2, 4).map(project => `
-                    <div class="card" style="background: #fef3c7;">
-                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <h3 style="color: #92400e;">${project.title}</h3>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                          <span style="color: #f59e0b;">★</span>
-                          <span style="font-weight: bold;">${project.rating}</span>
-                        </div>
-                      </div>
-                      <p>${project.description}</p>
-                      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px;">
-                        ${project.tags.slice(0, 4).map(tag => `
-                          <span style="background: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; border: 1px solid #fde68a;">
-                            ${tag}
-                          </span>
-                        `).join('')}
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-
-                <!-- Liens -->
-                <div>
-                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                    <div class="icon-circle" style="background: linear-gradient(135deg, #ec4899, #db2777);">🔗</div>
-                    <h2>Liens & Réseaux</h2>
-                  </div>
-                  
-                  <div style="display: flex; flex-direction: column; gap: 15px;">
-                    ${socialLinks.map(social => `
-                      <div style="
-                        background: #f8fafc;
-                        border-radius: 12px;
-                        padding: 20px;
-                        display: flex;
-                        align-items: center;
-                        gap: 15px;
-                        border: 1px solid #e5e7eb;
-                      ">
-                        <div style="
-                          width: 50px;
-                          height: 50px;
-                          background: white;
-                          border-radius: 10px;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          font-size: 22px;
-                          color: #4b5563;
-                          border: 1px solid #e5e7eb;
-                        ">
-                          ${social.label === 'GitHub' ? '🐙' : '💼'}
-                        </div>
-                        <div>
-                          <div style="font-weight: bold; font-size: 16px;">${social.label}</div>
-                          <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">${social.href}</div>
-                        </div>
-                      </div>
-                    `).join('')}
-                    
-                    <div style="
-                      background: linear-gradient(90deg, #dbeafe, #e0e7ff);
-                      border-radius: 12px;
-                      padding: 20px;
-                      border: 1px solid #bfdbfe;
-                    ">
-                      <div style="display: flex; align-items: center; gap: 15px;">
-                        <div style="
-                          width: 50px;
-                          height: 50px;
-                          background: white;
-                          border-radius: 10px;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          font-size: 22px;
-                          color: #3b82f6;
-                        ">
-                          📦
-                        </div>
-                        <div>
-                          <div style="font-weight: bold; font-size: 16px; color: #1e40af;">Boutique d'outils</div>
-                          <div style="font-size: 14px; color: #3b82f6; margin-top: 4px;">Mes projets live disponibles</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Colonne droite - Page 2 -->
-              <div>
-                <!-- Certifications -->
-                <div style="margin-bottom: 40px;">
-                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                    <div class="icon-circle" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">📜</div>
-                    <h2>Certifications</h2>
-                  </div>
-                  
-                  ${cvCertifications.map(cert => `
-                    <div style="
-                      background: #f0f9ff;
-                      border-radius: 12px;
-                      padding: 20px;
-                      margin-bottom: 15px;
-                      border-left: 4px solid #06b6d4;
-                    ">
-                      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <div style="font-weight: bold; font-size: 16px;">${cert.title}</div>
-                        <div class="badge" style="background: #cffafe; color: #0e7490;">${cert.date}</div>
-                      </div>
-                      <div style="font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 10px;">
-                        ${cert.issuer}
-                      </div>
-                      <p style="font-size: 14px; margin-bottom: 15px;">${cert.description}</p>
-                      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        ${cert.skills.map(skill => `
-                          <span style="
-                            background: white;
-                            padding: 4px 10px;
-                            border-radius: 6px;
-                            font-size: 12px;
-                            border: 1px solid #a5f3fc;
-                          ">
-                            ${skill}
-                          </span>
-                        `).join('')}
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-
-                <!-- Langues -->
-                <div>
-                  <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                    <div class="icon-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🌐</div>
-                    <h2>Langues</h2>
-                  </div>
-                  
-                  <div style="background: #faf5ff; border-radius: 16px; padding: 25px;">
-                    <div style="margin-bottom: 25px;">
-                      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span style="font-weight: 600;">Français</span>
-                        <span style="font-weight: bold; color: #7c3aed;">Langue maternelle</span>
-                      </div>
-                      <div class="skill-bar">
-                        <div class="skill-fill" style="width: 100%"></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span style="font-weight: 600;">Anglais</span>
-                        <span style="font-weight: bold; color: #7c3aed;">Intermédiaire</span>
-                      </div>
-                      <div class="skill-bar">
-                        <div class="skill-fill" style="width: 70%"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pied de page -->
-            <div class="footer">
-              <div>© ${new Date().getFullYear()} Ezechiel HOUNKPE - Tous droits réservés</div>
-              <div style="font-size: 12px; margin-top: 5px;">
-                Dernière mise à jour : ${new Date().toLocaleDateString('fr-FR', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric'
-                })}
-              </div>
-              <div style="font-size: 12px; margin-top: 5px; color: #3b82f6;">
-                Portfolio : https://votre-portfolio.com
-              </div>
-            </div>
-          </div>
-        </body>
-      </html>
-    `;
-
-    // Créer un iframe pour afficher le contenu
-    const iframe = document.createElement('iframe');
-    iframe.style.cssText = `
-      position: fixed;
-      left: -9999px;
-      top: 0;
-      width: 794px;
-      height: 2300px; /* Hauteur pour deux pages */
-      border: none;
-      visibility: hidden;
-    `;
-    
-    document.body.appendChild(iframe);
-    
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    iframeDoc.open();
-    iframeDoc.write(pdfContent);
-    iframeDoc.close();
-    
-    // Attendre le chargement
-    await new Promise(resolve => setTimeout(resolve, 800));
-
-    // Capturer les deux pages séparément
-    const pages = iframeDoc.querySelectorAll('.page-1, .page-2');
-    
-    // Créer le PDF avec plusieurs pages
-    const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4',
-      compress: true
-    });
-
-    for (let i = 0; i < pages.length; i++) {
-      const page = pages[i];
-      
-      // Créer un canvas pour chaque page
-      const canvas = await html2canvas(page, {
-        scale: 2,
-        backgroundColor: '#ffffff',
-        useCORS: true,
-        logging: false,
-        removeContainer: true,
-      });
-
-      const imgWidth = 210 - 20; // Largeur A4 moins marges
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      // Si ce n'est pas la première page, ajouter une nouvelle page
-      if (i > 0) {
-        pdf.addPage();
-      }
-
-      // Centrer verticalement
-      const y = (297 - imgHeight) / 2;
-      
-      pdf.addImage(
-        canvas.toDataURL('image/png', 1.0),
-        'PNG',
-        10,
-        y,
-        imgWidth,
-        imgHeight,
-        undefined,
-        'FAST'
-      );
-    }
-
-    // Nettoyer
-    document.body.removeChild(iframe);
-    document.body.removeChild(loadingDiv);
-
-    // Sauvegarder
-    pdf.save(`CV-Ezechiel-Hounkpe-Complet.pdf`);
-
-    // Notification
-    setFormStatus({ type: "success", message: "✅ CV complet téléchargé (2 pages) !" });
-    setTimeout(() => setFormStatus({ type: "", message: "" }), 4000);
-
-  } catch (error) {
-    console.error('Erreur PDF multi-pages:', error);
-    
-    // Nettoyer
-    const iframe = document.querySelector('iframe');
-    if (iframe) document.body.removeChild(iframe);
-    
-    const loadingDiv = document.querySelector('div[style*="position: fixed"][style*="background: rgba"]');
-    if (loadingDiv) document.body.removeChild(loadingDiv);
-
-    // Fallback simple
-    const pdf = new jsPDF();
-    pdf.text('CV - Ezechiel HOUNKPE', 20, 20);
-    pdf.text('Le CV complet est disponible sur votre portfolio.', 20, 40);
-    pdf.save('CV-Info.pdf');
-    
-    setFormStatus({ 
-      type: "error", 
-      message: "❌ Version simple générée. Essayez l'impression directe (Ctrl+P)." 
-    });
-  }
-};
+    const handleDownloadPDF = () => {};
 
     const cvCertifications = [
       {
@@ -2346,7 +1828,7 @@ function App() {
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
         <div
           className="relative bg-white dark:bg-slate-800 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl print-mode scroll-smooth"
-          ref={cvRef}
+          // ref={cvRef}
           onClick={(e) => e.stopPropagation()}
         >
           {/* En-tête du modal - Design Premium */}
@@ -2391,7 +1873,7 @@ function App() {
           </div>
 
           {/* Contenu du CV - Design Élégant */}
-          <div className="p-6 md:p-8 print-break-avoid">
+          <div ref={cvRef} className="p-6 md:p-8 print-break-avoid">
             {/* En-tête du CV - Design Premium */}
             <div className="mb-10 print-break-avoid">
               <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-8">
@@ -2572,7 +2054,7 @@ function App() {
                   </div>
 
                   <div className="space-y-4">
-                    {projects.slice(0, 3).map((project) => (
+                    {projects.slice(0, 5).map((project) => (
                       <div
                         key={project.id}
                         className="group bg-gradient-to-br from-white to-gray-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 hover:border-purple-300 dark:hover:border-purple-500 transition-all duration-300 hover:shadow-lg"
