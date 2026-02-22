@@ -602,6 +602,10 @@ function App() {
     },
   ];
 
+  const toggleDarkMode = () => {
+  setIsDarkMode(!isDarkMode);
+};
+
   // 🎯 GESTION DU MODE SOMBRE/CLAIR
   useEffect(() => {
     localStorage.setItem("portfolio-theme", JSON.stringify(isDarkMode));
@@ -652,10 +656,9 @@ function App() {
     };
   }, [isDarkMode]);
 
-  // 🎯 FONCTIONS
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  // 🎯 FONCTIONS - CORRIGER LA FONCTION 
+  
+
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1193,20 +1196,6 @@ function App() {
               <FaDownload className="mr-2" />
               Mon CV
             </button>
-
-            {/* Toggle Mode Sombre */}
-            <button
-              onClick={toggleDarkMode}
-              className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-slate-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
-              aria-label="Changer de thème"
-            >
-              {isDarkMode ? (
-                <FaSun className="text-yellow-500" />
-              ) : (
-                <FaMoon className="text-gray-600" />
-              )}
-            </button>
-
             {/* Menu Mobile */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -2077,7 +2066,10 @@ function App() {
           {/* Barre du bas avec copyright et mentions légales */}
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <p>© {currentYear} Ezechiel HOUNKPE. Tous droits réservés. Cotonou BENIN</p>
+              <p>
+                © {currentYear} Ezechiel HOUNKPE. Tous droits réservés. Cotonou
+                BENIN
+              </p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
