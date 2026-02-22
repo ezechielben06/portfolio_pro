@@ -1741,58 +1741,370 @@ function App() {
     );
   };
 
-  // 🎯 COMPOSANT FOOTER
-  const Footer = () => (
-    <footer className="bg-gradient-to-r from-slate-800 to-slate-900 dark:from-slate-900 dark:to-slate-950 text-white py-12 transition-colors duration-300">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="mb-6 md:mb-0">
-            <div className="text-2xl font-bold text-blue-400">
-              Ezechiel HOUNKPE
+  // 🎯 COMPOSANT FOOTER AMÉLIORÉ - Design Premium
+  const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
+    const footerLinks = {
+      exploration: [
+        {
+          name: "Accueil",
+          href: "#home",
+          icon: <FaCode className="w-4 h-4" />,
+        },
+        {
+          name: "À propos",
+          href: "#about",
+          icon: <FaGraduationCap className="w-4 h-4" />,
+        },
+        {
+          name: "Certifications",
+          href: "#certifications",
+          icon: <FaStar className="w-4 h-4" />,
+        },
+        {
+          name: "Compétences",
+          href: "#skills",
+          icon: <FaTools className="w-4 h-4" />,
+        },
+        {
+          name: "Projets",
+          href: "#projects",
+          icon: <FaBriefcase className="w-4 h-4" />,
+        },
+        {
+          name: "Contact",
+          href: "#contact",
+          icon: <FaEnvelope className="w-4 h-4" />,
+        },
+      ],
+      projets: [
+        { name: "Form-Builder Pro", href: "#projects", icon: "📝" },
+        { name: "Django Blog API", href: "#projects", icon: "🔧" },
+        { name: "E-commerce Backend", href: "#projects", icon: "🛍️" },
+        { name: "Facebook Clone", href: "#projects", icon: "👥" },
+        { name: "CV-Builder Pro", href: "#projects", icon: "📄" },
+        { name: "Tous les projets", href: "#projects", icon: "🚀" },
+      ],
+      ressources: [
+        {
+          name: "Télécharger CV",
+          href: "#",
+          icon: <FaDownload className="w-4 h-4" />,
+          onClick: () => setShowCVModal(true),
+        },
+        { name: "Boutique d'outils", href: "/utility-tools", icon: "🛠️" },
+        { name: "Blog technique", href: "#", icon: "📝", disabled: true },
+        { name: "Newsletter", href: "#", icon: "📧", disabled: true },
+      ],
+    };
+
+    return (
+      <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 dark:from-slate-950 dark:to-black text-white pt-16 pb-8 transition-colors duration-300 overflow-hidden">
+        {/* Éléments décoratifs - Cercles flous */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-blue-600/5 to-purple-600/5"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Grille principale du footer */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+            {/* Colonne 1 - Branding & Bio (plus large) */}
+            <div className="lg:col-span-4 space-y-6">
+              {/* Logo et nom */}
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                  <span className="text-white font-bold text-xl">EH</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Ezechiel HOUNKPE
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Développeur Full Stack & Créateur d'outils
+                  </p>
+                </div>
+              </div>
+
+              {/* Bio améliorée */}
+              <div className="space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  Passionné par le développement web et la création
+                  d'applications innovantes. Je conçois des solutions modernes,
+                  performantes et accessibles pour résoudre des problèmes
+                  concrets.
+                </p>
+
+                {/* Badges de spécialités */}
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1.5 bg-blue-500/10 text-blue-400 rounded-lg text-sm border border-blue-500/20">
+                    #React
+                  </span>
+                  <span className="px-3 py-1.5 bg-purple-500/10 text-purple-400 rounded-lg text-sm border border-purple-500/20">
+                    #Python
+                  </span>
+                  <span className="px-3 py-1.5 bg-green-500/10 text-green-400 rounded-lg text-sm border border-green-500/20">
+                    #Django
+                  </span>
+                  <span className="px-3 py-1.5 bg-yellow-500/10 text-yellow-400 rounded-lg text-sm border border-yellow-500/20">
+                    #JavaScript
+                  </span>
+                  <span className="px-3 py-1.5 bg-pink-500/10 text-pink-400 rounded-lg text-sm border border-pink-500/20">
+                    #FullStack
+                  </span>
+                </div>
+              </div>
+
+              {/* Statistiques améliorées */}
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-blue-500/30 transition-all group">
+                  <div className="text-2xl font-bold text-blue-400 group-hover:scale-110 transition-transform inline-block">
+                    {projects.length}+
+                  </div>
+                  <div className="text-sm text-gray-400">Projets réalisés</div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Applications live
+                  </div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-purple-500/30 transition-all group">
+                  <div className="text-2xl font-bold text-purple-400 group-hover:scale-110 transition-transform inline-block">
+                    15+
+                  </div>
+                  <div className="text-sm text-gray-400">Technologies</div>
+                  <div className="text-xs text-gray-500 mt-1">Maîtrisées</div>
+                </div>
+              </div>
+
+              {/* Réseaux sociaux améliorés */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">
+                  Suivez-moi
+                </h4>
+                <div className="flex space-x-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      className="group relative"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                      <div className="relative w-11 h-11 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:border-white/20 group-hover:scale-110 transition-all duration-300">
+                        <div className="text-gray-300 group-hover:text-white text-lg group-hover:scale-110 transition-all">
+                          {social.icon}
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                  {/* Bouton Email supplémentaire */}
+                  <a
+                    href="mailto:ezechielben06@gmail.com"
+                    className="group relative"
+                    aria-label="Email"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                    <div className="relative w-11 h-11 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:border-white/20 group-hover:scale-110 transition-all duration-300">
+                      <FaEnvelope className="text-gray-300 group-hover:text-white text-lg group-hover:scale-110 transition-all" />
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-            <p className="mt-2 text-gray-400">
-              Étudiant Développeur Web & Créateur d'outils
-            </p>
-          </div>
 
-          <div className="flex items-center space-x-6">
-            <span className="text-gray-400">Explorez également :</span>
-            <a
-              href="/utility-tools"
-              className="text-blue-400 hover:text-blue-300 transition-colors font-medium hover:underline"
-            >
-              Ma boutique d'outils
-            </a>
-          </div>
+            {/* Colonne 2 - Liens rapides */}
+            <div className="lg:col-span-2">
+              <h4 className="text-lg font-bold text-white mb-5 flex items-center">
+                <div className="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full mr-3"></div>
+                Exploration
+              </h4>
+              <ul className="space-y-3">
+                {footerLinks.exploration.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(link.href.replace("#", ""));
+                      }}
+                      className="flex items-center text-gray-400 hover:text-white transition-colors group"
+                    >
+                      <span className="mr-3 text-blue-400/70 group-hover:text-blue-400 group-hover:translate-x-1 transition-all">
+                        {link.icon}
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform">
+                        {link.name}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="flex space-x-6 mt-6 md:mt-0">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="text-gray-400 hover:text-white transition-colors text-xl"
-                aria-label={social.label}
-                target="_blank"
-                rel="noopener noreferrer"
+            {/* Colonne 3 - Projets populaires */}
+            <div className="lg:col-span-3">
+              <h4 className="text-lg font-bold text-white mb-5 flex items-center">
+                <div className="w-1 h-5 bg-gradient-to-b from-purple-500 to-pink-600 rounded-full mr-3"></div>
+                Projets à la une
+              </h4>
+              <ul className="space-y-3">
+                {footerLinks.projets.map((project, index) => (
+                  <li key={index}>
+                    <a
+                      href={project.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection("projects");
+                      }}
+                      className="flex items-center text-gray-400 hover:text-white transition-colors group"
+                    >
+                      <span className="mr-3 w-6 text-center group-hover:scale-110 transition-transform">
+                        {project.icon}
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform flex-1">
+                        {project.name}
+                      </span>
+                      {project.name.includes("Blog") && (
+                        <span className="ml-2 px-2 py-0.5 bg-green-500/10 text-green-400 rounded text-xs border border-green-500/20">
+                          API
+                        </span>
+                      )}
+                      {project.name.includes("E-commerce") && (
+                        <span className="ml-2 px-2 py-0.5 bg-purple-500/10 text-purple-400 rounded text-xs border border-purple-500/20">
+                          Django
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Colonne 4 - Contact & Newsletter */}
+            <div className="lg:col-span-3">
+              <h4 className="text-lg font-bold text-white mb-5 flex items-center">
+                <div className="w-1 h-5 bg-gradient-to-b from-green-500 to-teal-600 rounded-full mr-3"></div>
+                Restons connectés
+              </h4>
+
+              {/* Contact info avec design premium */}
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start space-x-3 group">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                    <FaEnvelope className="text-blue-400 w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Email</p>
+                    <a
+                      href="mailto:ezechielben06@gmail.com"
+                      className="text-gray-300 hover:text-white transition-colors break-all"
+                    >
+                      ezechielben06@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 group">
+                  <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/20 transition-colors">
+                    <FaMapMarkerAlt className="text-purple-400 w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Localisation</p>
+                    <p className="text-gray-300">Cotonou, Bénin</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bouton CV Premium */}
+              <button
+                onClick={() => setShowCVModal(true)}
+                className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
               >
-                {social.icon}
+                <div className="relative flex items-center justify-center space-x-3 rounded-xl bg-slate-900 px-6 py-4 transition-all duration-300 group-hover:bg-transparent">
+                  <FaDownload className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold text-white">
+                    Télécharger mon CV
+                  </span>
+                  <FaArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                </div>
+              </button>
+
+              {/* Disponibilité badge */}
+              <div className="mt-6 flex items-center justify-between p-4 bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-xl border border-green-500/10">
+                <div className="flex items-center space-x-3">
+                  <div className="relative">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="absolute top-0 left-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-green-400">
+                      Disponible pour
+                    </p>
+                    <p className="text-xs text-gray-400">
+                      Freelance & Collaborations
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("contact");
+                  }}
+                  className="text-xs text-blue-400 hover:text-blue-300 underline"
+                >
+                  Me contacter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Séparateur décoratif */}
+          <div className="relative my-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-white/10"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="px-4 bg-slate-900 text-gray-400 text-sm">
+                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+                  Code & Créativité
+                </span>
+              </span>
+            </div>
+          </div>
+
+          {/* Barre du bas avec copyright et mentions légales */}
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <p>© {currentYear} Ezechiel HOUNKPE. Tous droits réservés. Cotonou BENIN</p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors text-xs"
+              >
+                Mentions légales
               </a>
-            ))}
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors text-xs"
+              >
+                Politique de confidentialité
+              </a>
+              <div className="flex items-center space-x-2">
+                <span className="text-xs">Version</span>
+                <span className="px-2 py-1 bg-white/5 rounded-md text-xs font-mono text-blue-400">
+                  v2.0.0
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="border-t border-slate-700 dark:border-slate-800 pt-8 text-center">
-          <p className="text-gray-400">
-            © {new Date().getFullYear()} Ezechiel HOUNKPE - Tous mes projets
-            sont disponibles et fonctionnels
-          </p>
-          <p className="text-gray-500 text-sm mt-2">
-            Développé avec React, Tailwind CSS et passion
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
+      </footer>
+    );
+  };
   // 🎯 COMPOSANT CV MODAL - Design Élégant
   const CVModal = () => {
     const handlePrintCV = () => {
